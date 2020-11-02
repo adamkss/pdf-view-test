@@ -19,6 +19,9 @@ const Menu = () => {
       <Link to="/google">
         Using <code>{"<iframe>"} </code>with Google PDF Visualizer
       </Link>
+      <Link to="/simpleLink">
+        Using a simple link (<code>{"<a>"}</code>)
+      </Link>
     </Nav>
   );
 };

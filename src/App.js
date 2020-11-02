@@ -5,6 +5,7 @@ import Menu from "./views/menu";
 
 import Embed from "./views/embed";
 import GoogleViewer from "./views/google";
+import SimpleLink from "./views/simpleLink";
 
 const DOCUMENT_URL = "https://pdf-view-test.netlify.app/sample.pdf";
 
@@ -24,6 +25,11 @@ function App() {
               exact
               path="/google"
               render={() => <GoogleViewer documentURL={DOCUMENT_URL} />}
+            />
+            <Route
+              exact
+              path="/simpleLink"
+              render={() => <SimpleLink documentURL={DOCUMENT_URL} />}
             />
           </Switch>
         </main>
