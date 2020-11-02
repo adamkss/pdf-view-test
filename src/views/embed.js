@@ -1,7 +1,7 @@
-const Embed = () => {
+const Embed = ({ documentURL = "" }) => {
   return (
     <embed
-      src={process.env.PUBLIC_URL + "/sample.pdf"}
+      src={documentURL}
       width="100%"
       height="400"
       type="application/pdf"
