@@ -1,4 +1,4 @@
-export default () => {
+const Embed = () => {
   return (
     <embed
       src={process.env.PUBLIC_URL + "/sample.pdf"}
@@ -8,3 +8,5 @@ export default () => {
     ></embed>
   );
 };
+
+export default Embed;
