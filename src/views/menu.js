@@ -22,6 +22,9 @@ const Menu = () => {
       <Link to="/simpleLink">
         Using a simple link (<code>{"<a>"}</code>)
       </Link>
+      <Link to="/pdfjs">
+        Using Mozilla's renderer: <code>PDF.js</code>
+      </Link>
     </Nav>
   );
 };
