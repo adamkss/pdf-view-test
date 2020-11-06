@@ -1,5 +1,6 @@
 import "./App.css";
 import { Switch, BrowserRouter, Route } from "react-router-dom";
+import styled from "styled-components";
 
 import Menu from "./views/menu";
 
@@ -14,31 +15,29 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <main>
-          <Switch>
-            <Route exact path="/" render={() => <Menu />} />
-            <Route
-              exact
-              path="/embed"
-              render={() => <Embed documentURL={DOCUMENT_URL} />}
-            />
-            <Route
-              exact
-              path="/google"
-              render={() => <GoogleViewer documentURL={DOCUMENT_URL} />}
-            />
-            <Route
-              exact
-              path="/simpleLink"
-              render={() => <SimpleLink documentURL={DOCUMENT_URL} />}
-            />
-            <Route
-              exact
-              path="/pdfjs"
-              render={() => <PDFJS documentURL={"/sample.pdf"} />}
-            />
-          </Switch>
-        </main>
+        <Switch>
+          <Route exact path="/" render={() => <Menu />} />
+          <Route
+            exact
+            path="/embed"
+            render={() => <Embed documentURL={DOCUMENT_URL} />}
+          />
+          <Route
+            exact
+            path="/google"
+            render={() => <GoogleViewer documentURL={DOCUMENT_URL} />}
+          />
+          <Route
+            exact
+            path="/simpleLink"
+            render={() => <SimpleLink documentURL={DOCUMENT_URL} />}
+          />
+          <Route
+            exact
+            path="/pdfjs"
+            render={() => <PDFJS documentURL={"/sample.pdf"} />}
+          />
+        </Switch>
       </BrowserRouter>
     </div>
   );

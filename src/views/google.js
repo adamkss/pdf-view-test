@@ -1,4 +1,5 @@
 import React from "react";
+import PDFHolder from "../components/PDFHolder";
 
 const GoogleViewer = ({ documentURL = "" }) => {
   return <IframeGoogleDocs url={documentURL} />;
@@ -27,19 +28,33 @@ class IframeGoogleDocs extends React.Component {
   componentDidMount() {
     this.iframeTimeoutId = setInterval(this.updateIframeSrc, 1000);
   }
+  componentWillUnmount() {
+    clearInterval(this.iframeTimeoutId);
+  }
+
   render() {
     return (
-      <iframe
-        title="PDF"
-        onLoad={this.iframeLoaded}
-        onError={this.updateIframeSrc}
-        ref="iframe"
-        style={{
-          width: "100%",
-          height: 600,
-        }}
-        src={this.getIframeLink()}
-      ></iframe>
+      <PDFHolder
+        title="Google's Docs Viewer through an iframe"
+        observations={[
+          "✅ Works well on all browsers (mobile, desktop)",
+          "✅ Possibility of embedding in our document structure",
+          "❌ REDFLAG! Fails to load many times",
+          "❌ HUGE REDFLAG! Nobody is sure whether this is maintained or official",
+        ]}
+      >
+        <iframe
+          title="PDF"
+          onLoad={this.iframeLoaded}
+          onError={this.updateIframeSrc}
+          ref="iframe"
+          style={{
+            width: "100%",
+            height: "100%",
+          }}
+          src={this.getIframeLink()}
+        ></iframe>
+      </PDFHolder>
     );
   }
 }
