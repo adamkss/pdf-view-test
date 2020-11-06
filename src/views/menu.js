@@ -25,6 +25,9 @@ const Menu = () => {
       <Link to="/pdfjs">
         Using Mozilla's renderer: <code>PDF.js</code>
       </Link>
+      <Link to="/pspdfkit">
+        Using <code>PSPDFKIT</code>
+      </Link>
     </Nav>
   );
 };

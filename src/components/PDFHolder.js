@@ -32,7 +32,7 @@ const PDFHolder = ({ title = "", children, observations = [] }) => {
         <BackLink to="/">Explore Other Options</BackLink>
       </Header>
       <PDFWrapper>{children}</PDFWrapper>
-      {observations.length > 0 && <Observations observations={observations} />}}
+      {observations.length > 0 && <Observations observations={observations} />}
     </div>
   );
 };

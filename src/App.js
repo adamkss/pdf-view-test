@@ -7,6 +7,7 @@ import Embed from "./views/embed";
 import GoogleViewer from "./views/google";
 import SimpleLink from "./views/simpleLink";
 import PDFJS from "./views/pdfjs";
+import PSPDFKIT from "./views/pspdfkit";
 
 const DOCUMENT_URL = "https://pdf-view-test.netlify.app/sample.pdf";
 
@@ -35,6 +36,11 @@ function App() {
             exact
             path="/pdfjs"
             render={() => <PDFJS documentURL={"/sample.pdf"} />}
+          />
+          <Route
+            exact
+            path="/pspdfkit"
+            render={() => <PSPDFKIT documentURL={"/sample.pdf"} />}
           />
         </Switch>
       </BrowserRouter>
