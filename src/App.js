@@ -35,7 +35,7 @@ function App() {
           <Route
             exact
             path="/pdfjs"
-            render={() => <PDFJS documentURL={"/sample.pdf"} />}
+            render={() => <PDFJS documentURL={"/test-pdf1.pdf"} />}
           />
           <Route
             exact
