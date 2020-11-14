@@ -1,3 +1,5 @@
+/* eslint eqeqeq: "off" */
+
 import { useRef, useEffect, useState, useCallback } from "react";
 import * as pdfjsLib from "pdfjs-dist/build/pdf";
 import styled, { css } from "styled-components";
@@ -80,7 +82,6 @@ const Canvas = styled.canvas`
 
 const PDFJS = ({ documentURL = "" }) => {
   const pdfDoc = useRef(null);
-  const [numPages, setNumPages] = useState(0);
   const [pages, setPages] = useState([]);
   const [selectedPageNumber, setSelectedPageNumber] = useState(null);
   const [selectedPageIndex, setSelectedPageIndex] = useState(null);
@@ -127,7 +128,7 @@ const PDFJS = ({ documentURL = "" }) => {
         id: Math.random(),
       }))
     );
-  }, [renderPage]);
+  }, [documentURL]);
 
   useEffect(() => {
     loadPDFPages();
@@ -152,7 +153,7 @@ const PDFJS = ({ documentURL = "" }) => {
     } else {
       setSelectedPageIndex(null);
     }
-  }, [selectedPageNumber]);
+  }, [selectedPageNumber, pages]);
 
   useEffect(() => {
     if (pdfDoc.current) {
@@ -163,7 +164,7 @@ const PDFJS = ({ documentURL = "" }) => {
         );
       });
     }
-  }, [pages]);
+  }, [pages, renderPage]);
 
   const onMoveLeft = useCallback(() => {
     setPages(moveLeft(pages, selectedPageIndex));
