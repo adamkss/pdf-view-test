@@ -1,7 +1,7 @@
 /* eslint eqeqeq: "off" */
 
 import { useRef, useEffect, useState, useCallback } from "react";
-import * as pdfjsLib from "pdfjs-dist/build/pdf";
+import * as pdfjsLib from "pdfjs-dist/es5/build/pdf";
 import styled, { css } from "styled-components";
 
 import PDFHolder from "../components/PDFHolder";
